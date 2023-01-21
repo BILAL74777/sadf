@@ -1,0 +1,267 @@
+<template>
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Register New Profile Or Login</li>
+                </ol>
+                <h2>Register User / Login</h2>
+            </div>
+        </section>
+        <!-- End Breadcrumbs -->
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div
+                            class="col-md-8"
+                            style="
+                                border: 1px solid silver;
+                                border-radius: 10px;
+                                padding: 20px;
+                            "
+                        >
+                            <!-- Profile Edit Form -->
+                            <form @submit.prevent="submit">
+                                <div class="row mb-3">
+                                    <label
+                                        for="newPassword"
+                                        class="col-md-4 col-lg-3 col-form-label"
+                                        >Full Name</label
+                                    >
+                                    <div class="col-md-8 col-lg-9">
+                                        <div class="form-floating">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="user_name"
+                                                placeholder="Enter Your Full Name"
+                                                :class="{
+                                                    'invalid-bg':
+                                                        formErrors.user_name,
+                                                }"
+                                                v-model="form.user_name"
+                                            />
+                                            <label for="user_name"
+                                                >Full Name
+                                            </label>
+                                        </div>
+                                        <div
+                                            class="invalid-feedback animated fadeIn"
+                                            v-if="formErrors.user_name"
+                                        >
+                                            {{ formErrors.user_name[0] }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label
+                                        for="newPassword"
+                                        class="col-md-4 col-lg-3 col-form-label"
+                                        >Email</label
+                                    >
+                                    <div class="col-md-8 col-lg-9">
+                                        <div class="form-floating">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="email"
+                                                placeholder="Enter Your Email"
+                                                :class="{
+                                                    'invalid-bg':
+                                                        formErrors.email,
+                                                }"
+                                                v-model="form.email"
+                                            />
+                                            <label for="email">Email </label>
+                                        </div>
+                                        <div
+                                            class="invalid-feedback animated fadeIn"
+                                            v-if="formErrors.email"
+                                        >
+                                            {{ formErrors.email[0] }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label
+                                        for="newPassword"
+                                        class="col-md-4 col-lg-3 col-form-label"
+                                    >
+                                        Password</label
+                                    >
+                                    <div class="col-md-8 col-lg-9">
+                                        <div class="form-floating">
+                                            <input
+                                                type="password"
+                                                class="form-control"
+                                                id="password"
+                                                placeholder="New Password"
+                                                :class="{
+                                                    'invalid-bg':
+                                                        formErrors.password,
+                                                }"
+                                                v-model="form.password"
+                                            />
+                                            <label for="password"
+                                                >Password
+                                            </label>
+                                        </div>
+                                        <div
+                                            class="invalid-feedback animated fadeIn"
+                                            v-if="formErrors.password"
+                                        >
+                                            {{ formErrors.password[0] }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label
+                                        for="renewPassword"
+                                        class="col-md-4 col-lg-3 col-form-label"
+                                        >Re-enter Password To Confirm</label
+                                    >
+                                    <div class="col-md-8 col-lg-9">
+                                        <div class="form-floating">
+                                            <input
+                                                type="password"
+                                                class="form-control"
+                                                id="confirm_password"
+                                                placeholder="New Password"
+                                                :class="{
+                                                    'invalid-bg':
+                                                        formErrors.confirm_password,
+                                                }"
+                                                v-model="form.confirm_password"
+                                            />
+                                            <label for="confirm_password"
+                                                >Confirm Password
+                                            </label>
+                                        </div>
+                                        <div
+                                            class="invalid-feedback animated fadeIn"
+                                            v-if="formErrors.confirm_password"
+                                        >
+                                            {{ formErrors.confirm_password[0] }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary"
+                                    >
+                                        <i class="bi bi-plus-lg"></i>Register
+                                        Now
+                                    </button>
+                                    &nbsp;
+                                    <Link
+                                        type="button"
+                                        class="btn btn-success"
+                                        title="Login"
+                                        :href="route('login')"
+                                    >
+                                        <i class="bi bi-person"></i>
+                                        Login
+                                    </Link>
+                                </div>
+                            </form>
+                            <!-- End Profile Edit Form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Portfolio Details Section -->
+    </main>
+</template>
+
+<script>
+import Master from "@/Pages/Layouts/Master";
+
+import Multiselect from "@vueform/multiselect";
+export default {
+    layout: Master,
+    components: {
+        Multiselect,
+    },
+    props: ["customer"],
+    created() {
+        // this.fetchProjects();
+    },
+
+    data() {
+        return {
+            form: {
+                user_name: "",
+                email: "",
+                password: "",
+                confirm_password: "",
+                role: "user",
+            },
+            formProfileErrors: [],
+            formErrors: [],
+        };
+    },
+
+    methods: {
+        submit() {
+            axios
+                .post(route("api.user_store"), this.form, {
+                    headers: {
+                        Authorization: "Bearer " + this.$page.props.auth_token,
+                    },
+                })
+                .then((response) => {
+                    // console.log(data);
+                    toastr.success(
+                        "User Successfully Registered Now Click On Login Button To  Register As A Talent."
+                    );
+                    this.form.reset();
+                    this.$inertia.get(route("users_login"));
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                    toastr.error(error.response.data.message);
+
+                    if (error.response.data.errors) {
+                        this.formErrors = error.response.data.errors;
+                    }
+                });
+        },
+    },
+};
+</script>
+
+<style>
+@import "@vueform/multiselect/themes/default.css";
+
+.c-file-padding {
+    padding: 1rem 0.75rem !important;
+}
+.invalid-feedback {
+    display: block !important;
+}
+.invalid-bg {
+    border-color: #f8d4d4 !important;
+    background-color: #f8d4d4 !important;
+}
+
+#CodeSelect {
+    min-height: 58px;
+}
+.card {
+    overflow: visible;
+}
+header {
+    background: rgba(40, 58, 90, 0.9);
+}
+</style>

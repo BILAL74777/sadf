@@ -1,0 +1,182 @@
+/* frontend custom css */
+.c-input-group{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+.c-input-group>.form-control, .c-input-group>.form-select{
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+.c-ms-2-7{
+    margin-left: 2.7rem!important;
+}
+
+.invalid-feedback {
+    display: block !important;
+}
+
+
+.btn-success {
+    background-color: #8B2D88 !important;
+    border-color: #8B2D88 !important;
+}
+
+.btn-success:hover {
+    background-color: #8B2D88d6 !important;
+    border-color: #8B2D88d6 !important;
+}
+
+.btn-success:active {
+    background-color: #8B2D88d6 !important;
+    border-color: #8B2D88d6 !important;
+}
+
+.btn-success:focus {
+    color: #fff !important;
+    box-shadow: none !important;
+}
+.slider-tooltip{
+    background: #8B2D88 !important;
+    border: 1px solid #8B2D88 !important;
+}
+.slider-connect{
+    background: #8B2D88 !important;
+}
+.multiselect{
+    min-height: 2.4rem !important;
+}
+.card{
+    overflow:visible !important;
+}
+
+.c-file-padding {
+    padding: 1rem 0.75rem !important;
+    margin-top: -7px !important;
+}
+
+.c-files input {
+    outline: 2px dashed #8B2D88;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset 0.15s ease-in-out,
+        background-color 0.15s linear;
+    transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+    padding: 60px 0px 65px 35% !important;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+    position: relative !important;
+}
+
+.c-files input:focus {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset 0.15s ease-in-out,
+        background-color 0.15s linear;
+    transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+    border: 1px solid #8B2D88;
+}
+
+.c-files:after {
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.c-files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    /* content: " or drag images here. ";    */
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.c-files {
+    position: relative !important;
+    margin-top: -7px !important;
+}
+
+.form-check-input:checked {
+    background-color: #8B2D88 !important;
+    border-color: #8B2D88 !important;
+}
+
+.dp__range_end,
+.dp__range_start,
+.dp__active_date {
+    background-color: #8B2D88 !important;
+    border-color: #8B2D88 !important;
+}
+
+.dp__select {
+    color: #8B2D88 !important;
+    border-color: #8B2D88 !important;
+}
+
+.dp__today {
+    border: 1px solid #8B2D88 !important;
+}
+
+
+.dp__overlay_cell_active {
+    background: #8B2D88 !important;
+}
+
+.toast-success {
+    background-color: #8B2D88 !important;
+}
+
+.form-check-input:checked {
+    background-color: #8B2D88 !important;
+    border-color: #8B2D88 !important;
+}
+
+.c-bg-theme-purple {
+    background-color: #8B2D88 !important;
+}
+
+.dp__overlay_cell_active {
+    background-color: #8B2D88 !important;
+}
+
+.multiselect-tag {
+    background: #8B2D88 !important;
+}
+
+.multiselect .is-selected {
+    background: #8B2D88 !important;
+}
+
+.multiselect .is-selected {
+    background: #8B2D88 !important;
+}
+body{
+    background: black !important;
+}
+.cta .cta-btn:hover {
+    background: #eb6814;
+    border: 2px solid #ec6816;
+}
